@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/ml">
+
+    <TextView
+        android:id="@+id/textChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGide"
+        app:layout_constraintEnd_toEndOf="@id/rightGide"
+        app:layout_constraintTop_toTopOf="@id/topGide"
+        android:text="@string/choose_dices"/>
+
+
+    <TextView
+        android:id="@+id/d1"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d2"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d3"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d4"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d5"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d6"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d7"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d8"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d9"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d10"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d11"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d12"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d13"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d14"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d15"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d16"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d17"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d18"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d19"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d20"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d21"
+        style="@style/diceStyle"
+        />
+
+    <TextView
+        android:id="@+id/d22"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d23"
+        style="@style/diceStyle" />
+
+    <TextView
+        android:id="@+id/d24"
+        style="@style/diceStyle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/mainFlow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids=""
+        app:flow_horizontalGap="10dp"
+        app:flow_horizontalStyle="spread"
+        app:flow_verticalGap="5dp"
+        app:flow_wrapMode="aligned"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGide"
+        app:layout_constraintEnd_toEndOf="@id/rightGide"
+        app:layout_constraintStart_toStartOf="@id/leftGide"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/choose_dices"
+        app:layout_constraintEnd_toEndOf="@id/textChoose"
+        app:layout_constraintStart_toStartOf="@id/textChoose"
+        app:layout_constraintTop_toBottomOf="@id/textChoose"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
