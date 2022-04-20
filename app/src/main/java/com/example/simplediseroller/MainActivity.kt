@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var grain: Int = 6
     lateinit var spinner: Spinner
     lateinit var state: State
-
+    var resultDiceRoll = mutableMapOf<Int, Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -55,13 +55,17 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 i++
                 arr.add(it.id)
                 diceList[it] = i
-                it.text = state.diceNumList[i]?.toString() ?: " "
+                returnState(it, i)
                 it.setOnClickListener {
                     diceClick(it as TextView)
                 }
             }
         }
         binding.mainFlow.referencedIds = arr.toIntArray()
+    }
+
+    private fun returnState(it: TextView, i: Int) {
+        it.text = state.diceNumList[i]?.toString() ?: " "
     }
 
     fun diceClick(obj: TextView) {
@@ -71,11 +75,25 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
 
         diceList.filter { it.value > ind!! }.forEach { (textView, _) -> textView.text = getString(R.string.nullText)}
+        binding.result.text = createDiceThrowResult()
+        resultDiceRoll = mutableMapOf<Int, Int>()
+    }
+
+    private fun createDiceThrowResult(): CharSequence {
+        val keys = resultDiceRoll.keys.sortedDescending()
+        val sb = StringBuilder()
+        keys.forEach { sb.append("$it = ${resultDiceRoll[it]}; ") }
+        return sb.toString()
+    }
+
+    private fun setResultRoll (dice: Int) {
+        resultDiceRoll[dice] = resultDiceRoll[dice]?.plus(1) ?: 1
     }
 
     private fun rollDice(dice: TextView, grain: Int) {
         val r = Random.nextInt(1, grain + 1)
         dice.text = r.toString()
+        setResultRoll(r)
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

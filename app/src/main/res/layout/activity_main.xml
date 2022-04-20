@@ -8,6 +8,15 @@
     android:id="@+id/ml">
 
     <TextView
+        android:id="@+id/result"
+        style="@style/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGide"
+        app:layout_constraintEnd_toEndOf="@id/rightGide"
+        app:layout_constraintTop_toBottomOf="@id/mainFlow"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGide"/>
+    <TextView
         android:id="@+id/textChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
